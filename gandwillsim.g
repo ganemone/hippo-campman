@@ -14,7 +14,7 @@ create xgraph /bdata/voltage
 create table /somatable
 call somatable TABCREATE 100 0 100
 setfield /somatable step_mode 4
-addmsg /prot_pyr/soma /somatable Vm x
+addmsg /prot_pyr/soma /somatable INPUT x
 
 xshow /data
 xshow /pulsedata
@@ -34,6 +34,7 @@ addmsg /pulse /pulsedata/pulsegraph PLOT output *pulse *orange
 
 create xbutton /data/RESET -script reset
 create xbutton /data/RUN -script "step 2 -time"
+create xbutton /data/SAVE -script "tab2file somaVm /somatable somatable"
 create xbutton /data/QUIT -script "xhide /data"
 
 check
