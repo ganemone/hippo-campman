@@ -11,6 +11,11 @@ create xgraph /pulsedata/pulsegraph
 create xform /bdata
 create xgraph /bdata/voltage
 
+create table /somatable
+call somatable TABCREATE 100 0 100
+setfield /somatable step_mode 4
+addmsg /prot_pyr/soma /somatable Vm x
+
 xshow /data
 xshow /pulsedata
 xshow /bdata
