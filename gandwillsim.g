@@ -1,5 +1,3 @@
-setfield /prot_pyr/soma Rm 10 Cm 2 Em 25 inject 5
-
 create xform /data
 create xgraph /data/voltage
 
