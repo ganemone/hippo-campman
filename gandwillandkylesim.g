@@ -51,7 +51,7 @@ call /diskin RESET
 //inject = {getfield /diskin val[0][0]}
 //inject = {inject} * 1e-12
 //setfield /diskin val[0][0] {{getfield /diskin val[0][0]}*1e-12}
-
+add
 addmsg /diskin /prot_pyr/soma INJECT {val[0][0]*1e-12}
 addmsg /diskin /pulsedata/pulsegraph PLOT {val[0][0]*1e-12} *randomIn *orange
 
