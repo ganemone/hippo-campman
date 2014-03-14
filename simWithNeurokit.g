@@ -6,4 +6,3 @@ setfield /diskin nx 1 ny 1 filename rand2.txt dt 10 leave_open 1
 call /diskin RESET
 addmsg /diskin /prot_pyr/soma INJECT val[0][0]
 
-
