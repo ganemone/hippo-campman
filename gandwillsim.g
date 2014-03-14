@@ -28,13 +28,14 @@ xshow /cdata
 //set simulation time step size for clock 0
 setclock 0 .7e-5
 
-addmsg /prot_pyr/soma /data/voltage PLOT Vm *volts *red
+//addmsg /prot_pyr/soma /data/voltage PLOT Vm *volts *red
+addmsg /prot_pyr/as2 /data/voltage PLOT Vm *volts *red
 addmsg /prot_pyr/soma /data/voltage PLOT inject *current *blue
 addmsg /prot_pyr/{comp} /bdata/voltage PLOT Vm *volts *black
 
 //create pulse generator
 create pulsegen /pulse
-setfield /pulse level1 {-1800e-12} width1 {500e-3} delay1 100e-3 delay2 100
+setfield /pulse level1 {1800e-12} width1 {500e-3} delay1 100e-3 delay2 100
 
 //connect pulse generator to cell ("inject pulse")
 addmsg /pulse /prot_pyr/as1 INJECT output
@@ -46,7 +47,7 @@ addmsg /prot_pyr/{comp}/K_A /cdata/channel PLOT Gk *K_A,Siemens *blue
 
 create xbutton /data/RESET -script reset
 create xbutton /data/RUN -script "step 1 -time"
-create xbutton /data/SAVE -script "tab2file somaVmHyper /somatable table -overwrite"
+create xbutton /data/SAVE -script "tab2file dentriteVmDep /somatable table -overwrite"
 create xbutton /data/QUIT -script "quit"
 
 reset
